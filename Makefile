@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -Iinclude
 
 TARGET = packetlens
 
-SRC = src/main.c
+SRC = src/main.c src/cli.c
 
 all:
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
