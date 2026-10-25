@@ -3,6 +3,7 @@
 
 #include "packetlens/cli.h"
 #include "packetlens/version.h"
+#include "packetlens/capture.h"
 
 static void print_help(void) {
     printf("PacketLens-C - lightweight packet sniffer\n");
@@ -22,7 +23,8 @@ static void print_version(void) {
 int packetlens_handle_args(int argc, char *argv[]){
     if (argc == 1){
         printf("PacketLens-C starting...\n");
-        return 0;
+        int capture_result = packetlens_start_capture();
+        return capture_result;
     }
 
     if (argc > 2) {
